@@ -3,7 +3,7 @@
 
 ![PID Response Plot](pid_response.png)
 
-## 1. 🎯 Project Overview
+##  Project Overview
 This project is a digital twin simulation of a common industrial process: **controlling the liquid level in a process tank**. It's a foundational application in chemical engineering and process control.
 
 The system is built in two parts:
@@ -12,7 +12,7 @@ The system is built in two parts:
 
 The controller's sole objective is to maintain the tank's level at a specific **setpoint** (e.g., 50%) by manipulating the **inflow rate** (the control variable). It must achieve this goal despite the constant outflow and random disturbances, demonstrating a closed-loop feedback system.
 
-## 2. 💡 Concept of PID Control
+##  Concept of PID Control
 A PID controller is a feedback mechanism that continuously calculates an **error value** $e(t)$ as the difference between the desired **setpoint (SP)** and the measured **process variable (PV)**. It then applies a correction based on three terms:
 
 * **P (Proportional):** Responds to the *current* error. A larger error results in a larger corrective action. `Output = Kp * e(t)`
@@ -26,14 +26,14 @@ $$\text{Output}(t) = K_p e(t) + K_i \int_0^t e(\tau) d\tau + K_d \frac{de(t)}{dt
 
 This simulation implements this logic to decide the inflow rate required to hold the tank level steady.
 
-## 3. 🛠️ System Architecture
+## System Architecture
 The project is decoupled into two main scripts, a common practice in engineering workflows:
 1.  **`main.py`:** Runs the core simulation. It initializes the `Tank` and `PIDController`, runs the loop for 1000 seconds, calculates key performance metrics (Settling Time, Overshoot), and saves the raw time-series data to `simulation_data.csv`.
 2.  **`visualize.py`:** Acts as a post-processing script. It reads `simulation_data.csv`, analyzes the results, and generates the polished `pid_response.png` plot using Matplotlib.
 
 This separation of concerns allows for re-running analysis or generating new plots without having to re-run the entire simulation.
 
-## 4. 🚀 How to Run
+##  How to Run
 
 ### Requirements
 * Python 3.10+
@@ -45,7 +45,7 @@ This separation of concerns allows for re-running analysis or generating new plo
 ### Installation
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/pure-controls.git](https://github.com/YOUR_USERNAME/pure-controls.git)
+    git clone [https://github.com/emrichy07/pure-controls.git](https://github.com/emrichy07/pure-controls.git)
     cd pure-controls
     ```
 2.  (Optional but recommended) Create and activate a virtual environment:
